@@ -20,7 +20,7 @@ RUN cd /var/www/typo3 && composer update
 
 RUN cd /var/www && git clone https://github.com/neos/neos-base-distribution.git
 RUN mv /var/www/neos-base-distribution /var/www/neos
-RUN cd /var/www/neos && composer install
+RUN cd /var/www/neos && git checkout 2.0 && composer install
 
 # RUN Install script
 ADD run.sh /run.sh
