@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 echo "PLUSWERK: Update TYPO3"
-cd /var/www/html && git pull
+cd /var/www/typo3 && git pull
 composer update
 
 service mysql start
 
 echo "PLUSEWRK:   Set extensions active"
-cd /var/www/default/
+cd /var/www/typo3/
 cp typo3conf/ext/typo3_console/Scripts/typo3cms .
 chmod +x typo3cms
 
