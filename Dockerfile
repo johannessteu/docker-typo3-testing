@@ -11,6 +11,7 @@ RUN curl -s https://getcomposer.org/installer | php &&  mv composer.phar /usr/lo
 ADD docker-files /
 
 RUN mkdir -p /var/www
+
 # install typo3
 RUN cd /var/www && git clone http://git.typo3.org/Packages/TYPO3.CMS.git
 
