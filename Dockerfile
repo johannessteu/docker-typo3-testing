@@ -20,22 +20,22 @@ RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-3
 RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-0
 RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_master
 
-RUN cd /var/www/typo3_master && sed -i s/"\"authors\""/"\"repositories\": [{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
+RUN cd /var/www/typo3_master && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{\"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\"}],\"authors\""/g composer.json
 RUN cd /var/www/typo3_master && composer require helhum/typo3-console 1.*
 RUN cd /var/www/typo3_master && composer update
 
 RUN cd /var/www/typo3_7-3 && git checkout TYPO3_7-3
-RUN cd /var/www/typo3_7-3 && sed -i s/"\"authors\""/"\"repositories\": [{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
+RUN cd /var/www/typo3_7-3 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
 RUN cd /var/www/typo3_7-3 && composer require helhum/typo3-console 1.*
 RUN cd /var/www/typo3_7-3 && composer update
 
 RUN cd /var/www/typo3_7-4 && git checkout TYPO3_7-4-0
-RUN cd /var/www/typo3_7-4 && sed -i s/"\"authors\""/"\"repositories\": [{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
+RUN cd /var/www/typo3_7-4 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
 RUN cd /var/www/typo3_7-4 && composer require helhum/typo3-console 1.*
 RUN cd /var/www/typo3_7-4 && composer update
 
 RUN cd /var/www/typo3_7-0 && git checkout TYPO3_7-0
-RUN cd /var/www/typo3_7-0 && sed -i s/"\"authors\""/"\"repositories\": [{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
+RUN cd /var/www/typo3_7-0 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
 RUN cd /var/www/typo3_7-0 && composer require helhum/typo3-console 1.*
 RUN cd /var/www/typo3_7-0 && composer update
 
