@@ -34,10 +34,10 @@ RUN cd /var/www/typo3_7-4 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\
 RUN cd /var/www/typo3_7-4 && composer require helhum/typo3-console 1.*
 RUN cd /var/www/typo3_7-4 && composer update
 
-RUN cd /var/www/typo3_7-0 && git checkout TYPO3_7-0
-RUN cd /var/www/typo3_7-0 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
-RUN cd /var/www/typo3_7-0 && composer require helhum/typo3-console 1.*
-RUN cd /var/www/typo3_7-0 && composer update
+RUN cd /var/www/typo3_7-6 && git checkout TYPO3_7-6
+RUN cd /var/www/typo3_7-6 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
+RUN cd /var/www/typo3_7-6 && composer require helhum/typo3-console 1.*
+RUN cd /var/www/typo3_7-6 && composer update
 
 RUN cd /var/www && git clone https://github.com/neos/neos-base-distribution.git
 RUN mv /var/www/neos-base-distribution /var/www/neos
