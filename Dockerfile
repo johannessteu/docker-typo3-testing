@@ -17,7 +17,7 @@ RUN cd /var/www && git clone http://git.typo3.org/Packages/TYPO3.CMS.git
 
 RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-4
 RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-3
-RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-0
+RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-6
 RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_master
 
 RUN cd /var/www/typo3_master && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"http:\/\/composer.typo3.org\"},{\"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\"}],\"authors\""/g composer.json
