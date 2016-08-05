@@ -19,10 +19,9 @@ RUN cp -R /var/www/TYPO3.CMS /var/www/typo3_7-6
 
 RUN cd /var/www/typo3_7-6 && git checkout TYPO3_7-6
 RUN cd /var/www/typo3_7-6 && sed -i s/"\"authors\""/"\"repositories\": [{\"type\": \"composer\", \"url\": \"https:\/\/composer.typo3.org\"},{ \"type\": \"git\", \"url\": \"https:\/\/github.com\/helhum\/typo3_console.git\" }],\"authors\""/g composer.json
-RUN cd /var/www/typo3_7-6 && composer require helhum/typo3-console 1.*
-RUN cd /var/www/typo3_7-6 && composer update
-
-RUN cd /var/www && git clone https://github.com/neos/neos-base-distribution.git
-RUN mv /var/www/neos-base-distribution /var/www/neos
-RUN cd /var/www/neos && composer install
-
+RUN cd /var/www/typo3_7-6 && composer install
+RUN mkdir -p /var/www/typo3_7-6/typo3conf/ext
+RUN cd /var/www/typo3_7-6/typo3conf/ext && git clone https://github.com/TYPO3-Console/typo3_console.git
+#RUN cd /var/www/typo3_7-6 && cat composer.json
+#RUN cd /var/www/typo3_7-6 && composer require helhum/typo3-console 1.2.5
+#RUN cd /var/www/typo3_7-6 && composer update --ignore-platform-reqs
